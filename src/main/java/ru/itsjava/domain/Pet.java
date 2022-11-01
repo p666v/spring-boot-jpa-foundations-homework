@@ -19,7 +19,6 @@ public class Pet {
     private long id;
     private String breed;
 
-
     @Override
     public String toString() {
         return "id: " + id + ", питомец: " + breed;

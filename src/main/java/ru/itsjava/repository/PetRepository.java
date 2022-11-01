@@ -5,6 +5,7 @@ import ru.itsjava.domain.Pet;
 import java.util.List;
 
 public interface PetRepository {
+
     Pet getById(long id);
 
     void insert(Pet pet);
