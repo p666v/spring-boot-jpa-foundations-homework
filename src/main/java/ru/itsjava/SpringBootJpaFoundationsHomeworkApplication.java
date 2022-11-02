@@ -58,6 +58,13 @@ public class SpringBootJpaFoundationsHomeworkApplication {
         }
         System.out.println();
 
+        User user3 = userRepository.getById(3L);
+        user3.setName("TANOS");
+        user3.setAge(100000);
+        userRepository.update(user3);
+        System.out.println("userRepository.getById(3L) = " + userRepository.getById(3L));
+        System.out.println();
+
         userRepository.deleteById(4L);
         System.out.println("userRepository.getById(4L) = " + userRepository.getById(4L));
 

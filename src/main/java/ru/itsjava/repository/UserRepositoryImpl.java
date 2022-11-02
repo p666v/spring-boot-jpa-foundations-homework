@@ -2,7 +2,6 @@ package ru.itsjava.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import ru.itsjava.domain.Pet;
 import ru.itsjava.domain.User;
 
 import javax.persistence.EntityManager;
@@ -32,6 +31,11 @@ public class UserRepositoryImpl implements UserRepository {
         } else {
             entityManager.merge(user);
         }
+    }
+
+    @Override
+    public void update(User user) {
+        entityManager.merge(user);
     }
 
     @Override
