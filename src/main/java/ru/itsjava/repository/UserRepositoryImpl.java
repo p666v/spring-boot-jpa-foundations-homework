@@ -35,6 +35,19 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public void deleteById(long id) {
+
+//        User userById = entityManager.createQuery("select u from users u join fetch u.pet where u.id = :id", User.class)
+//                .setParameter("id", id).getResultList().stream().findAny().orElse(null);
+//
+//        entityManager.remove(userById);
+
+        User userById = entityManager.find(User.class, id);
+        entityManager.remove(userById);
+
+    }
+
+    @Override
     public List<User> findAll() {
         return entityManager.createQuery("select distinct u from users u join fetch u.pet", User.class).getResultList();
 

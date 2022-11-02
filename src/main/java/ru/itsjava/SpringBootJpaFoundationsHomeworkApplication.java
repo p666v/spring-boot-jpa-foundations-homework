@@ -42,6 +42,7 @@ public class SpringBootJpaFoundationsHomeworkApplication {
 
         UserRepository userRepository = context.getBean(UserRepository.class);
         System.out.println("userRepository.getById(1L) = " + userRepository.getById(1L));
+        System.out.println("userRepository.getById(4L) = " + userRepository.getById(4L));
 
         List<User> userList = userRepository.findAll();
         for (User users : userList) {
@@ -56,6 +57,9 @@ public class SpringBootJpaFoundationsHomeworkApplication {
             System.out.println(users);
         }
         System.out.println();
+
+        userRepository.deleteById(4L);
+        System.out.println("userRepository.getById(4L) = " + userRepository.getById(4L));
 
 
 

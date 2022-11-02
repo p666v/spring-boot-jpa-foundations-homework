@@ -21,7 +21,7 @@ public class User {
     @ManyToOne(targetEntity = Pet.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_id")
     private Pet pet;
-//    private List<Pet> pet;
+
 
 
 
