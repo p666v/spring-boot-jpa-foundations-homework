@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 @DataJpaTest
 @Import(UserRepositoryImpl.class)
@@ -55,14 +56,14 @@ public class UserRepositoryImplTest {
         assertEquals("TANOS", actualUser.getName());
     }
 
-//    @DisplayName("Корректно удаляет пользователя по id")
-//    @Test
-//    public void shouldHaveCorrectDeleteById() {
-//        userRepository.deleteById(3L);
-//        var deletedPet = userRepository.getById(3L);
-//
-//        assertNull(deletedPet);
-//    }
+    @DisplayName("Корректно удаляет пользователя по id")
+    @Test
+    public void shouldHaveCorrectDeleteById() {
+        userRepository.deleteById(3L);
+        var deletedUser = userRepository.getById(3L);
+
+        assertNull(deletedUser);
+    }
 
     @DisplayName("Корректно возвращает список всех пользователей")
     @Test

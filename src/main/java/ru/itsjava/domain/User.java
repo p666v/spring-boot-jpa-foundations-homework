@@ -18,7 +18,7 @@ public class User {
     private long id;
     private String name;
     private int age;
-    @ManyToOne(targetEntity = Pet.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = Pet.class, cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_id")
     private Pet pet;
 

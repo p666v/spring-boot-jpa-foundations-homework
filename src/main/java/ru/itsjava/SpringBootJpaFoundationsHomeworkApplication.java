@@ -65,8 +65,8 @@ public class SpringBootJpaFoundationsHomeworkApplication {
         System.out.println("userRepository.getById(3L) = " + userRepository.getById(3L));
         System.out.println();
 
-        userRepository.deleteById(4L);
-        System.out.println("userRepository.getById(4L) = " + userRepository.getById(4L));
+        userRepository.deleteById(3L);
+        System.out.println("userRepository.getById(4L) = " + userRepository.getById(3L));
 
 
 
